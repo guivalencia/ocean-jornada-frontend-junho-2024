@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import './ViewItemById.css'
 
 function ViewItemById() {
 
@@ -27,8 +28,14 @@ function ViewItemById() {
 
   return (
     <>
-    <div className="cards">
+    <div className="view_item">
+      <Link to="/">Voltar para Home</Link>
       <h1>{item.name}</h1>
+
+      <div className="content">
+        <div>Imagem</div>
+        <div>Texto</div>
+      </div>
     </div>
     </>
   )
