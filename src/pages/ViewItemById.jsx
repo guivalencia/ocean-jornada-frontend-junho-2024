@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 function ViewItemById() {
 
   const [item, setItens] = useState([])
 
+  const { itemId } = useParams()
+
   async function carregarDados() {
-    const apiUrl = 'https://rickandmortyapi.com/api/character/1'
+    const apiUrl = 'https://rickandmortyapi.com/api/character/' + itemId
 
     const response = await fetch(apiUrl)
 
@@ -24,7 +27,9 @@ function ViewItemById() {
 
   return (
     <>
+    <div className="cards">
       <h1>{item.name}</h1>
+    </div>
     </>
   )
 }
